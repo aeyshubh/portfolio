@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 :root{
 	--mainColor:#eaeaea;
 	--secondaryColor:#fff;
@@ -5,21 +6,72 @@
 	--borderColor:#c1c1c1;
 
 	--mainText:black;
-	--secondaryText:#4b5156;
+	--secondaryText:#05386b;
 
 	--themeDotBorder:#24292e;
 
 	--previewBg:rgb(251, 249, 243, 0.8);
 	--previewShadow:#f0ead6;
 
-
+	--primary:#3700b3;
 	--buttonColor:black;
 
 
 }
-.same{
-	
-}
+
+
+.container{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+  }
+  .container > .static-txt {
+	color: #5cdb95;
+	font-size: 50px;
+  }
+  
+  .container > .dynamic-txt {
+	color: var(--primary);
+	font-size:50px;
+	height:70px;
+	line-height:70px;
+	overflow:hidden;
+	margin-left:0 0 0 15px;
+	padding-left: 15px;
+  }
+  .dynamic-txt > li {
+	list-style:none;
+	font-weight:500;
+	position: relative;
+	animation: slide 6s steps(3) infinite;
+  }
+  @keyframes slide{
+	100% {
+	  top: -70px;
+	}
+  }
+  .dynamic-txt li span {
+	margin:5px 0;
+	line-height:70px;
+  }
+  
+  .dynamic-txt li span::after {
+	position:absolute;
+	content:'';
+	left:0;
+	height:100%;
+	width:100%;
+	line-height:70px;
+	background:var(--background);
+	border-left: 2px solid var(--primary);
+	animation: typing 3s steps(10) infinite;
+  }
+  
+  @keyframes typing {
+	40%,60% {left: calc(100% + 30px);}
+	100% {left:0;}
+  }
+
 
 #twitter,#instagram ,#github , #linkedln{
 	height: 80px;
@@ -184,8 +236,8 @@ h6 { font-size: 16px;}
 	display: block;
 	margin:0 auto;
 
-	height: 200px;
-	width: 200px;
+	height: 250px;
+	width: 230px;
 	object-fit: cover;
 	border:2px solid var(--borderColor);
 }
@@ -319,7 +371,7 @@ h6 { font-size: 16px;}
 }
 
 #social_img{
-	width: 80%;
+	width: 90%;
 }
 
 
